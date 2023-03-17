@@ -1,4 +1,4 @@
-package Dynamic_Programming;
+package Longest_Palindromic_Substring;
 
 public class LongestPalindromicSubstring {
     public String longestPalindrome(String s) {
