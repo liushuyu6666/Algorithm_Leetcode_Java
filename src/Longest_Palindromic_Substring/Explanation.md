@@ -1,3 +1,7 @@
+# Note of Longest Palindromic Substring
+
+## 2D Matrix
+
 This problem involves dynamic programming applied to substring manipulation. As with similar problems, we can use a matrix 
 to assist us in finding the optimal solution.:
 
@@ -6,7 +10,8 @@ To construct this matrix, we must consider three key questions:
 1. How should we initialize the matrix? Do we need to add padding to the input string to simplify the problem?
 2. What is the transition equation that allows us to update the current grid based on the previous ones?
 3. In what order should we fill in the cells of the matrix to ensure that we have all the necessary information for the 
-final solution?"
+final solution?".
+4. When to stop?
 
 The matrix is here: ![matrix.png](matrix.png)
 The matrix `dp[i][j]` represents whether the substring `s.substring(i, j + 1)` is a palindrome or not. Since `i` should 
@@ -22,4 +27,5 @@ of the orange cell, we first need to know the value of the red cell. However, th
    1. When `i` equals `j`, the substring is a palindrome, so `dp[i][j]` should be set to true. 
    2. When `j - i = 1`, we need to check whether `s[i]` and `s[j]` are equal to determine if the substring is a palindrome.
 3. We should fill in the cells of the matrix in the order indicated by the green arrows.
+4. To the last cell.
 
