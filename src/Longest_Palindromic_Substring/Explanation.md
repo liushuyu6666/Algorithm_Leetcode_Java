@@ -29,3 +29,6 @@ of the orange cell, we first need to know the value of the red cell. However, th
 3. We should fill in the cells of the matrix in the order indicated by the green arrows.
 4. To the last cell.
 
+## Optimize by scrolling array
+We can observe that the value of `dp[i][j]` is determined solely by `dp[i+1][j-1]`. As a result, we can convert the matrix 
+into a one-dimensional scroll array, which saves space but does not reduce the number of loop iterations.

@@ -27,11 +27,42 @@ public class LongestPalindromicSubstring {
         return longestPalin;
     }
 
+    public String longestPalindromeInOneD(String s) {
+        if (s.length() < 2) return s;
+
+        int len = s.length();
+        int max = 0;
+        String longestStr = s.substring(0, 1);
+
+        // Initial
+        boolean[] dp1 = new boolean[len];
+        boolean[] dp2 = new boolean[len];
+        dp1[0] = true;
+
+        for (int j = 1; j < len; j++) {
+            for (int i = 0; i <= j; i++) {
+                if (j == i) dp2[i] = true;
+                else if (j - i == 1) dp2[i] = s.charAt(i) == s.charAt(j);
+                else dp2[i] = dp1[i + 1] && (s.charAt(i) == s.charAt(j));
+
+                if (dp2[i] && j - i + 1 > max) {
+                    max = j - i + 1;
+                    longestStr = s.substring(i, j + 1);
+                }
+            }
+            dp1 = dp2;
+        }
+
+        return longestStr;
+    }
+
     public static void main(String[] args) {
         LongestPalindromicSubstring longest = new LongestPalindromicSubstring();
         String test1 = "aaaa";
         String result1 = longest.longestPalindrome(test1);
+        String resultFor1D1 = longest.longestPalindromeInOneD(test1);
 
         System.out.println(result1);
+        System.out.println(resultFor1D1);
     }
 }
