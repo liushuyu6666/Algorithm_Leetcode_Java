@@ -36,10 +36,10 @@ public class LongestPalindromicSubstring {
 
         // Initial
         boolean[] dp1 = new boolean[len];
-        boolean[] dp2 = new boolean[len];
         dp1[0] = true;
 
         for (int j = 1; j < len; j++) {
+            boolean[] dp2 = new boolean[len];
             for (int i = 0; i <= j; i++) {
                 if (j == i) dp2[i] = true;
                 else if (j - i == 1) dp2[i] = s.charAt(i) == s.charAt(j);
