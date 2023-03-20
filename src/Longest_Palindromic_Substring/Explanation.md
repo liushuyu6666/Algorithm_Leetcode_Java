@@ -31,4 +31,8 @@ of the orange cell, we first need to know the value of the red cell. However, th
 
 ## Optimize by scrolling array
 We can observe that the value of `dp[i][j]` is determined solely by `dp[i+1][j-1]`. As a result, we can convert the matrix 
-into a one-dimensional scroll array, which saves space but does not reduce the number of loop iterations.
+into a one-dimensional scroll array, which saves space but does not reduce the number of loop iterations.  
+**Caveat:**  
+![caveat in scroll array](caveat.png)  
+Since `dp1` and `dp2` will point to the same memory after `dp1 = dp2`,
+we need to create a new `dp2` at the beginning of each inner loop to avoid overwriting the previous values.
