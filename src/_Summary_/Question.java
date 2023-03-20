@@ -59,4 +59,18 @@ public class Question {
         this.number = number;
         this.labels = labels;
     }
+
+    public void parseCsvObject(String str) {
+        String[] properties = str.split(",");
+
+        this.number = Integer.parseInt(properties[0]);
+        this.name = properties[1];
+        this.labels = new ArrayList<>();
+
+        String arrayStr = properties[2];
+        String[] labelsArray = arrayStr.replaceAll("[\\[\\]\"]", "").split(";");
+        for (String labelStr : labelsArray) {
+            this.labels.add(Integer.parseInt(labelStr));
+        }
+    }
 }

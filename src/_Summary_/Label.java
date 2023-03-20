@@ -41,4 +41,10 @@ public class Label {
         this.name = name;
         this.id = id;
     }
+
+    public void parseCsvObject(String str) {
+        String[] properties = str.split(",");
+        this.id = Integer.parseInt(properties[0]);
+        this.name = properties[1];
+    }
 }

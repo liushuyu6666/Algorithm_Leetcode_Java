@@ -1,70 +1,60 @@
 package _Summary_;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVParser;
+import org.apache.commons.csv.CSVRecord;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.*;
 
 @SuppressWarnings("unchecked")
 public class Questions_in_Labels {
-    public ArrayList<Question> readQuestionsFromJson(String jsonPath) {
-        JSONParser jsonParser = new JSONParser();
+    /** Read Questions from specified .csv file */
+    public ArrayList<Question> readQuestionsFromCsv(String jsonPath) {
         ArrayList<Question> questions = new ArrayList<>();
 
-        try (FileReader reader = new FileReader(jsonPath)) {
-            //Read JSON file
-            Object obj = jsonParser.parse(reader);
-            JSONArray jsonArray = (JSONArray) obj;
+        try {
+            Scanner scanner = new Scanner(new File(jsonPath));
+            scanner.next(); // skip the header
 
-            Set<Integer> existingQuestions = new HashSet<>();
-            jsonArray.forEach(item -> {
+            while(scanner.hasNext()) {
+                String questionString = scanner.next();
                 Question question = new Question();
-                question.parseJsonObject((JSONObject) item);
-                if (!existingQuestions.contains(question.getNumber())) {
-                    questions.add(question);
-                    existingQuestions.add(question.getNumber());
-                }
-            });
-
-        } catch (ParseException | IOException e) {
+                question.parseCsvObject(questionString);
+                questions.add(question);
+            }
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 
         return questions;
     }
 
-    public ArrayList<Label> readLabelsFromJson(String jsonPath) {
-        JSONParser jsonParser = new JSONParser();
+    /** Read Labels from specified .csv file */
+    public ArrayList<Label> readLabelsFromCsv(String jsonPath) {
         ArrayList<Label> labels = new ArrayList<>();
 
-        try (FileReader reader = new FileReader(jsonPath)) {
-            //Read JSON file
-            Object obj = jsonParser.parse(reader);
-            JSONArray jsonArray = (JSONArray) obj;
+        try {
+            Scanner scanner = new Scanner(new File(jsonPath));
+            scanner.next(); // skip the header
 
-            Set<Integer> existingLabels = new HashSet<>();
-            jsonArray.forEach(item -> {
+            while(scanner.hasNext()) {
+                String labelString = scanner.next();
                 Label label = new Label();
-                label.parseJsonObject((JSONObject) item);
-                if (!existingLabels.contains(label.getId())) {
-                    labels.add(label);
-                    existingLabels.add(label.getId());
-                }
-            });
-
-        } catch (ParseException | IOException e) {
+                label.parseCsvObject(labelString);
+                labels.add(label);
+            }
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 
         return labels;
     }
 
+    /** convert label name (string) to id by a given mapper named labels */
     public ArrayList<Integer> convertLabelsToIds(ArrayList<Label> labels, ArrayList<String> labelsName) {
         ArrayList<Integer> labelIds = new ArrayList<>();
 
@@ -83,8 +73,8 @@ public class Questions_in_Labels {
     }
 
     public ArrayList<Question> findAllQuestionsUnderLabels(String[] labelsName) {
-        ArrayList<Question> questions = this.readQuestionsFromJson("src/_Summary_/Questions.json");
-        ArrayList<Label> labels = this.readLabelsFromJson(("src/_Summary_/Labels.json"));
+        ArrayList<Question> questions = this.readQuestionsFromCsv("src/_Summary_/Questions.json");
+        ArrayList<Label> labels = this.readLabelsFromCsv(("src/_Summary_/Labels.csv"));
 
         ArrayList<String> labelNames = new ArrayList<>();
         Collections.addAll(labelNames, labelsName);
@@ -103,8 +93,11 @@ public class Questions_in_Labels {
     public static void main(String[] args) {
         Questions_in_Labels tool = new Questions_in_Labels();
 
-        String[] labelNames = {"substring"};
-        System.out.println(tool.findAllQuestionsUnderLabels(labelNames));
+        ArrayList<Question> questions = tool.readQuestionsFromCsv("src/_Summary_/Questions.csv");
+        ArrayList<Label> labels = tool.readLabelsFromCsv("src/_Summary_/Labels.csv");
+
+        System.out.println(questions);
+        System.out.println(labels);
     }
 
 }
