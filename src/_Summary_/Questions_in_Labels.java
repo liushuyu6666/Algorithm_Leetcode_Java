@@ -96,8 +96,8 @@ public class Questions_in_Labels {
         ArrayList<Question> questions = tool.readQuestionsFromCsv("src/_Summary_/Questions.csv");
         ArrayList<Label> labels = tool.readLabelsFromCsv("src/_Summary_/Labels.csv");
 
-        System.out.println(questions);
-        System.out.println(labels);
+        questions.forEach(Question::printQuestion);
+        labels.forEach(Label::printLabel);
     }
 
 }

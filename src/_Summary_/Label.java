@@ -47,4 +47,12 @@ public class Label {
         this.id = Integer.parseInt(properties[0]);
         this.name = properties[1];
     }
+
+    public void printLabel() {
+        String print = "";
+
+        print += "Id: " + this.id + " Name: " + this.name;
+
+        System.out.println(print);
+    }
 }
