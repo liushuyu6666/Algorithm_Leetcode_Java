@@ -1,4 +1,4 @@
-number,name,labels,prerequisites
-5,Longest_Palindromic_Substring,"[1;2;3]",[],
-10,Regular_Expression_Matching,"[1;2;3]",[],
-44,Wildcard_Matching,"[1;2;3]","[10]"
+number,name,labels,prerequisites,benchmarks
+5,Longest_Palindromic_Substring,"[1;2;3]",[],"[3]"
+10,Regular_Expression_Matching,"[1;2;3]",[],"[3]"
+44,Wildcard_Matching,"[1;2;3]","[10]",[]

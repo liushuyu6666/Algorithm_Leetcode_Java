@@ -17,14 +17,17 @@ public class Question {
 
     private ArrayList<Integer> prerequisites;
 
+    private ArrayList<Integer> benchmarks;
+
     public Question() {
     }
 
-    public Question(String name, int number, ArrayList<Integer> labels, ArrayList<Integer> prerequisites) {
+    public Question(String name, int number, ArrayList<Integer> labels, ArrayList<Integer> prerequisites, ArrayList<Integer> benchmarks) {
         this.name = name;
         this.number = number;
         this.labels = labels;
         this.prerequisites = prerequisites;
+        this.benchmarks = benchmarks;
     }
 
     public String getName() {
@@ -59,6 +62,14 @@ public class Question {
         this.prerequisites = prerequisites;
     }
 
+    public ArrayList<Integer> getBenchmarks() {
+        return benchmarks;
+    }
+
+    public void setBenchmarks(ArrayList<Integer> benchmarks) {
+        this.benchmarks = benchmarks;
+    }
+
     private void readArrayProperty(String arrayStr, ArrayList<Integer> property) {
         String[] labelsArray = arrayStr.replaceAll("[\\[\\]\"]", "").split(";");
         for (String labelStr : labelsArray) {
@@ -87,17 +98,20 @@ public class Question {
         this.name = properties[1];
         this.labels = new ArrayList<>();
         this.prerequisites = new ArrayList<>();
+        this.benchmarks = new ArrayList<>();
 
         readArrayProperty(properties[2], this.labels);
 
         readArrayProperty(properties[3], this.prerequisites);
+
+        readArrayProperty(properties[4], this.benchmarks);
     }
 
     public void printQuestion() {
         String print = "";
 
         print += "Number: " + this.number + " Name: " + this.name + " " + printArrayProperty("labels", this.labels) +
-                " " + printArrayProperty("prerequisites", this.prerequisites);
+                " " + printArrayProperty("prerequisites", this.prerequisites) + " " + printArrayProperty("benchmarks", this.benchmarks);
 
         System.out.println(print);
     }

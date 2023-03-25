@@ -72,24 +72,6 @@ public class Questions_in_Labels {
         return q.getLabels().stream().anyMatch(labelIds::contains);
     }
 
-    public ArrayList<Question> findAllQuestionsUnderLabels(String[] labelsName) {
-        ArrayList<Question> questions = this.readQuestionsFromCsv("src/_Summary_/Questions.json");
-        ArrayList<Label> labels = this.readLabelsFromCsv(("src/_Summary_/Labels.csv"));
-
-        ArrayList<String> labelNames = new ArrayList<>();
-        Collections.addAll(labelNames, labelsName);
-        ArrayList<Integer> ids = this.convertLabelsToIds(labels, labelNames);
-
-        ArrayList<Question> selectedQuestions = new ArrayList<>();
-        questions.forEach(question -> {
-            if (isLabeled(question, ids)) {
-                selectedQuestions.add(question);
-            }
-        });
-
-        return selectedQuestions;
-    }
-
     public static void main(String[] args) {
         Questions_in_Labels tool = new Questions_in_Labels();
 
