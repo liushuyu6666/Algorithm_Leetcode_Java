@@ -3,3 +3,4 @@ id,name
 2,"substring"
 3,"dynamic_programming_in_substring"
 4,"trie"
+5,"dynamic_programming_knapsack"
