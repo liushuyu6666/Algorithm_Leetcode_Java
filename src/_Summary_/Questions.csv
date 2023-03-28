@@ -6,3 +6,4 @@ number,name,labels,prerequisites,benchmarks
 14,Longest_Common_Prefix,"[4]","[1032]"",[]
 139,Word_Break,"[1;5]",[],"[5]"
 322,Coin_Change,"[1;5]","[139]",[]
+518,Coin_Change_II,"[1;5]","[322]",[5]
