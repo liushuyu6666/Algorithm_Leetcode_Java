@@ -19,15 +19,19 @@ public class Question {
 
     private ArrayList<Integer> benchmarks;
 
+    private boolean worthyToTryAgain;
+
     public Question() {
     }
 
-    public Question(String name, int number, ArrayList<Integer> labels, ArrayList<Integer> prerequisites, ArrayList<Integer> benchmarks) {
+    public Question(String name, int number, ArrayList<Integer> labels, ArrayList<Integer> prerequisites,
+                    ArrayList<Integer> benchmarks, boolean worthyToTryAgain) {
         this.name = name;
         this.number = number;
         this.labels = labels;
         this.prerequisites = prerequisites;
         this.benchmarks = benchmarks;
+        this.worthyToTryAgain = worthyToTryAgain;
     }
 
     public String getName() {
@@ -70,6 +74,14 @@ public class Question {
         this.benchmarks = benchmarks;
     }
 
+    public boolean isWorthyToTryAgain() {
+        return worthyToTryAgain;
+    }
+
+    public void setWorthyToTryAgain(boolean worthyToTryAgain) {
+        this.worthyToTryAgain = worthyToTryAgain;
+    }
+
     private void readArrayProperty(String arrayStr, ArrayList<Integer> property) {
         String[] labelsArray = arrayStr.replaceAll("[\\[\\]\"]", "").split(";");
         for (String labelStr : labelsArray) {
@@ -96,6 +108,7 @@ public class Question {
 
         this.number = Integer.parseInt(properties[0]);
         this.name = properties[1];
+        this.worthyToTryAgain = Boolean.parseBoolean(properties[5]);
         this.labels = new ArrayList<>();
         this.prerequisites = new ArrayList<>();
         this.benchmarks = new ArrayList<>();
@@ -111,7 +124,8 @@ public class Question {
         String print = "";
 
         print += "Number: " + this.number + " Name: " + this.name + " " + printArrayProperty("labels", this.labels) +
-                " " + printArrayProperty("prerequisites", this.prerequisites) + " " + printArrayProperty("benchmarks", this.benchmarks);
+                " " + printArrayProperty("prerequisites", this.prerequisites) + " " +
+                printArrayProperty("benchmarks", this.benchmarks) + " WorthyToTryAgain: " + this.worthyToTryAgain;
 
         System.out.println(print);
     }
