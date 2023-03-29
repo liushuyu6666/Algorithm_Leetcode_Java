@@ -8,3 +8,4 @@ number,name,labels,prerequisites,benchmarks
 322,Coin_Change,"[1;5]","[139]",[]
 518,Coin_Change_II,"[1;5]","[322]",[5]
 140,Word_Break_II,"[6]","[139]",[6]
+208,Implement_Trie_Prefix_Tree,"[4]","[]",[4]
