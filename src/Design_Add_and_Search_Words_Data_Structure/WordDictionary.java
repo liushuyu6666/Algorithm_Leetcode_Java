@@ -35,6 +35,7 @@ class WordDictionary {
             boolean val = false;
             for (int i = 0; i < 26; i++) {
                 if (curr.childNode[i] != null) {
+                    // Caveat: don't move the curr pointer, curr = curr.childNode[i] is wrong.gi
                     val |= dfs(curr.childNode[i], word, index + 1);
                     if (val) return true;
                 }
