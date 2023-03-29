@@ -4,8 +4,9 @@ number,name,labels,prerequisites,benchmarks
 44,Wildcard_Matching,"[1;2;3]","[10]",[]
 1032,Stream_of_Characters,"[4]",[],"[4]"
 14,Longest_Common_Prefix,"[4]","[1032]"",[]
-139,Word_Break,"[1;5;6;7]",[],"[5;6;7]"
+139,Word_Break,"[1;5;6;7;8]",[],"[5;6;7;8]"
 322,Coin_Change,"[1;5]","[139]",[]
 518,Coin_Change_II,"[1;5]","[322]",[5]
-140,Word_Break_II,"[6]","[139]",[6]
-208,Implement_Trie_Prefix_Tree,"[4]","[]",[4]
+140,Word_Break_II,"[6;8]","[139]",[6]
+208,Implement_Trie_Prefix_Tree,"[4]","[]",[]
+211,Design_Add_and_Search_Words_Data_Structure,[4;8],[],[4;8]
