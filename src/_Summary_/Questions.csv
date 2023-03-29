@@ -7,3 +7,4 @@ number,name,labels,prerequisites,benchmarks
 139,Word_Break,"[1;5;6;7]",[],"[5;6;7]"
 322,Coin_Change,"[1;5]","[139]",[]
 518,Coin_Change_II,"[1;5]","[322]",[5]
+140,Word_Break_II,"[6]","[139]",[6]
