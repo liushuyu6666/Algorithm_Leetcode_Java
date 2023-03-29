@@ -43,17 +43,64 @@ public class WordBreak {
         return dp[s.length()];
     }
 
+    public boolean wordBreakDFS(String s, List<String> wordDict) {
+        HashMap<Integer, Boolean> memo = new HashMap<>();
+        return this.canBeBrokenDFS(s, wordDict, memo, 0);
+    }
+
+    // check if s.substring(sep, s.length()) can be broken
+    // memo means s.substring(i, s.length()) can be broken
+    private boolean canBeBrokenDFS(String s, List<String> wordDict, HashMap<Integer, Boolean> memo, int sep) {
+        if (sep >= s.length()) return true;
+        if (memo.containsKey(sep)) return memo.get(sep);
+
+        for (int i = sep + 1; i < s.length() + 1; i++) {
+            String prefix = s.substring(sep, i);
+            if (wordDict.contains(prefix) && this.canBeBrokenDFS(s, wordDict, memo, i)) {
+                memo.put(sep, true);
+                return true;
+            }
+        }
+        memo.put(sep, false);
+        return false;
+    }
+
+    public boolean wordBreakBFS(String s, List<String> wordDict) {
+        Queue<Integer> qu = new LinkedList<>();
+        HashSet<Integer> memo = new HashSet<>();
+        qu.add(0);
+
+        return this.canBeBrokenBFS(s, wordDict, memo, qu);
+    }
+
+    private boolean canBeBrokenBFS(String s, List<String> wordDict, HashSet<Integer> visited, Queue<Integer> qu)  {
+        if (qu.isEmpty()) return false;
+        if (qu.peek() == s.length()) return true;
+
+        Integer sep = qu.poll();
+        if (!visited.contains(sep)) {
+            visited.add(sep);
+            for (int i = sep + 1; i < s.length() + 1; i++) {
+                String prefix = s.substring(sep, i);
+                if (wordDict.contains(prefix)) {
+                    qu.add(i);
+                }
+            }
+        }
+        return this.canBeBrokenBFS(s, wordDict, visited, qu);
+    }
+
     public static void main(String[] args) {
         WordBreak wb = new WordBreak();
 
-        String s = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" +
-                "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab";
-        String[] str = new String[]{"a", "aa", "aaa", "aaaa", "aaaaa", "aaaaaa", "aaaaaaa", "aaaaaaaa", "aaaaaaaaa",
-                "aaaaaaaaaa"};
+        String s = "catsandog";
+        String[] str = new String[]{"cats","dog","sand","and","cat"};
         List<String> wordDict = new ArrayList<>(Arrays.asList(str));
 
         System.out.println(wb.wordBreakDynamicProgramming(s, wordDict));
         System.out.println(wb.wordBreakKnapsack(s, wordDict));
+        System.out.println(wb.wordBreakDFS(s, wordDict));
+        System.out.println(wb.wordBreakBFS(s, wordDict));
 
     }
 }

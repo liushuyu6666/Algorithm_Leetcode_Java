@@ -4,3 +4,5 @@ id,name
 3,"dynamic_programming_in_substring"
 4,"trie"
 5,"dynamic_programming_knapsack"
+6,"DFS"
+7,"BFS"
