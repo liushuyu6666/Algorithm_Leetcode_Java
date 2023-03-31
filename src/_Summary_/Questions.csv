@@ -15,3 +15,4 @@ number,name,labels,prerequisites,benchmarks,worthyToTryAgain
 425,Word_Squares,[4;6],[],[4;6],true
 616,Add_Bold_Tag_in_String,[2;8],[139],[],false
 648,Replace_Words,[4;8],[139],[],false
+676,Implement_Magic_Dictionary,[4;6],[],[4;6],true
