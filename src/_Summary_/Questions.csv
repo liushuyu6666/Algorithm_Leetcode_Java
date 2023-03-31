@@ -13,3 +13,4 @@ number,name,labels,prerequisites,benchmarks,worthyToTryAgain
 212,Word_Search_II,[4;6;9],[211],[4;6;9],true
 336,Palindrome_Pairs,[4;10],[],[4;10],true
 425,Word_Squares,[4;6],[],[4;6],true
+616,Add_Bold_Tag_in_String,[2;8],[139],[],false
