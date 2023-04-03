@@ -18,3 +18,4 @@ number,name,labels,prerequisites,benchmarks,worthyToTryAgain
 676,Implement_Magic_Dictionary,[4;6],[],[4;6],true
 677,Map_Sum_Pairs,[4],[],[],false
 720,Longest_Word_in_Dictionary,[4],[],[],false
+154,Find_Minimum_in_Rotated_Sorted_Array_II,[11],[],[11],true
