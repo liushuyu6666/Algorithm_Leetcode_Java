@@ -19,5 +19,6 @@ public void dfs(int[] numbers, int leftIndex, int rightIndex) {
 }
 ```
 Here is a visual representation of the dichotomous process to completion, which always culminates in the `leftIndex` and 
-`rightIndex` converging.
+`rightIndex` converging.  
+
 ![dichotomous_edge.png](dichotomous_edge.png)
