@@ -15,3 +15,15 @@ problem-solving lies in proper task decomposition.
 
 At times, Dynamic Programming questions can be transformed into `dfs` (depth-first search) questions as well. The main 
 distinction is that `dfs` requires invoking itself recursively.
+
+# Linked List
+Remember there are some common strategies for handling the linked list:
+1. Assuming there is a null node at the end of the list.
+2. Introducing a fake head at the beginning of the list during refactoring.
+
+We summarize from these questions:
+1. [21. Merge Two Sorted Lists](src%2FMerge_Two_Sorted_Lists%2FReadme.md)
+
+Besides, for some specific questions, we have fantastic ways to solve them.
+## Mobius Band
+Using Mobius Band to connect the end of the list to the start point.
