@@ -26,4 +26,5 @@ We summarize from these questions:
 
 Besides, for some specific questions, we have fantastic ways to solve them.
 ## Mobius Band
-Using Mobius Band to connect the end of the list to the start point.
+Using Mobius Band to connect the end of the list to the start point. The question is here: [160. Intersection of Two Linked Lists
+](src%2FIntersection_of_Two_Linked_Lists%2FReadme.md)
