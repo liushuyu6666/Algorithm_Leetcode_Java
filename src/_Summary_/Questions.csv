@@ -23,3 +23,4 @@ number,name,labels,prerequisites,benchmarks,worthyToTryAgain
 21,Merge_Two_Sorted_Lists,[13],[],[13],true
 160,Intersection_of_Two_Linked_Lists,[13;14],[],[14],true
 10021,Odd_in_front_of_Even,[15],[],[15],true
+79,Word_Search,[6;9],[212],[6;9],true
