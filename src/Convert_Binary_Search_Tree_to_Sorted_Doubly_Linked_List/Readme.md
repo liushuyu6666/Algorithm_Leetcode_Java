@@ -17,4 +17,9 @@ In the current question, we employ the same approach. Furthermore, we define a c
 the `prev` is unnecessarily points to its left child node.  
 
 For example, the `node 4` and its successive node `node 5` is not adjacent.
-![Binary_Search_Tree.png](Binary_Search_Tree.png)
+![Binary_Search_Tree.png](Binary_Search_Tree.png)  
+
+From this question, we can glean two key points:
+1. Utilizing the provided code prototype confirms the ability to traverse the tree in the order depicted in the picture.
+2. In certain cases, employing class variables instead of passing variables directly into the `dfs` function can enhance 
+understanding and facilitate ease of operation.
