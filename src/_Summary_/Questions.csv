@@ -28,3 +28,4 @@ number,name,labels,prerequisites,benchmarks,worthyToTryAgain
 113,Path_Sum_II,[16;17],[79],[],false
 426,Convert_Binary_Search_Tree_to_Sorted_Doubly_Linked_List,[18],[],[18],true
 10054,Kth_Largest_Node_in_Binary_Search_Tree,[18],[426],[],false
+20045,Sort_Array_to_Minimum_Number,[19;20],[],[20],true
