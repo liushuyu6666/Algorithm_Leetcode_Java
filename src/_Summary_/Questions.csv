@@ -30,3 +30,4 @@ number,name,labels,prerequisites,benchmarks,worthyToTryAgain
 10054,Kth_Largest_Node_in_Binary_Search_Tree,[18],[426],[],false
 20045,Sort_Array_to_Minimum_Number,[19;20],[],[20],true
 295,Find_Median_from_Data_Stream,[21],[],[21],true
+110,Balanced_Binary_Tree,[22;12;6],[],[22],true
