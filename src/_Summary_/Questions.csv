@@ -32,3 +32,4 @@ number,name,labels,prerequisites,benchmarks,worthyToTryAgain
 295,Find_Median_from_Data_Stream,[21],[],[21],true
 110,Balanced_Binary_Tree,[22;12;6],[],[22],true
 236,Lowest_Common_Ancestor_of_a_Binary_Tree,[6;12;16],[],[6;12;16],true
+105,Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal,[12],[236],[12],true
