@@ -37,3 +37,4 @@ number,name,labels,prerequisites,benchmarks,worthyToTryAgain
 50,Power_x_n,[23],[],[23],true
 10033,Postorder_of_Binary_Search_Tree,[6;18],[],[18],true
 191,Number_of_1_Bits,[24],[],[24],true
+10065,Addition_without_Addition_Subtraction_Multiplication_and_Division,[24],[],[24],true
