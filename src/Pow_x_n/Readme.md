@@ -4,7 +4,7 @@ We can use `dfs` to calculate it.
 
 ![power_x_y.png](power_x_y.png)
 
-We can optimize the calculation of $x<sup>n</sup>$ by storing the result in a temporary variable `temp` instead of calling 
+We can optimize the calculation of $x^n$ by storing the result in a temporary variable `temp` instead of calling 
 `dfs(x, n) * dfs(x, n)` twice.
 
 ```java
