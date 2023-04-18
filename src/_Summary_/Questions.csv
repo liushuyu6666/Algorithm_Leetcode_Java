@@ -36,3 +36,4 @@ number,name,labels,prerequisites,benchmarks,worthyToTryAgain
 106,Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal,[12],[105],[12],false
 50,Power_x_n,[23],[],[23],true
 10033,Postorder_of_Binary_Search_Tree,[6;18],[],[18],true
+191,Number_of_1_Bits,[24],[],[24],true
