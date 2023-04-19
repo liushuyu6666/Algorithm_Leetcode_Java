@@ -1,4 +1,4 @@
-package The_Occurrences_of_a_Number_in_an_Array;
+package The_Occurrences_of_a_Number_in_an_Array_I;
 
 public class Solution {
     public int[] singleNumbers(int[] nums) {

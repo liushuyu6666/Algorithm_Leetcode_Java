@@ -38,4 +38,5 @@ number,name,labels,prerequisites,benchmarks,worthyToTryAgain
 10033,Postorder_of_Binary_Search_Tree,[6;18],[],[18],true
 191,Number_of_1_Bits,[24],[],[24],true
 10065,Addition_without_Addition_Subtraction_Multiplication_and_Division,[24],[],[24],true
-10056,The_Occurrences_of_a_Number_in_an_Array,[24],[],[24],true
+10056,The_Occurrences_of_a_Number_in_an_Array_I,[24],[],[24],true
+10056,The_Occurrences_of_a_Number_in_an_Array_II,[24;25],[],[25],true
