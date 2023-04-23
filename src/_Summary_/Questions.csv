@@ -42,3 +42,4 @@ number,name,labels,prerequisites,benchmarks,worthyToTryAgain
 10056,The_Occurrences_of_a_Number_in_an_Array_II,[24;25],[],[25],true
 169,Majority_Element,[26],[],[26],true
 10066,Build_Product_Array,[27],[],[27],true
+343,Integer_Break,[28,29],[],[28,29],true
