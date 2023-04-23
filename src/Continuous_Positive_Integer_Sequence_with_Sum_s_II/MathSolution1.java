@@ -2,14 +2,14 @@ package Continuous_Positive_Integer_Sequence_with_Sum_s_II;
 
 import java.util.ArrayList;
 
-public class MathSolution {
+public class MathSolution1 {
     public int[][] findContinuousSequence(int target) {
         int i = 1;
         ArrayList<int[]> ans = new ArrayList<>();
         while(2 * i + 1 <= target) {
             int end = this.getEnd(i, target);
             if(end != -1) {
-                ans.add(this.getResult(i, end));
+                ans.add(this.putAns(i, end));
             }
             i++;
         }
@@ -27,7 +27,7 @@ public class MathSolution {
         if(end <= s) return -1;
         return (int) end;
     }
-    public int[] getResult(int s, int end) {
+    public int[] putAns(int s, int end) {
         int[] res = new int[end - s + 1];
         for(int i = s; i < end + 1; i++) {
             res[i - s] = i;
