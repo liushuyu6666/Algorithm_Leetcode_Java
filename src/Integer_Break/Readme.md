@@ -12,4 +12,5 @@ Take the logarithm of both sides of the equation:
 $$\ln(y) = \frac{1}{x}\ln(x)$$
 To find the derivative of both sides of the equation with respect to $x$, since $y$ is a function of $x$, we use the 
 chain rule to obtain
-$$\frac{1}{y}y' = \frac{1-\lnx}{x^2}$$
+$$\frac{1}{y}\dot{y} = \frac{1-\ln(x)}{x^2}$$
+$$\dot{y} = \frac{1-\ln(x)}{x^2} \cdot x^{\frac{1}{x}}$$
