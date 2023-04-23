@@ -22,8 +22,8 @@ The second method shifts the focus from the starting element to the interval of 
 and using the equation $(s + x)(x - s + 1) = 2n$, we can simplify it to $(2s + i)(i + 1) = 2n$. Finally, we get
 $$s = \frac{n - \frac{i(i+1)}{2}}{i + 1}$$
 Note that $s$ must be a positive integer, we have:
-1. $$t > \frac{i(i+1)}{2}$$.
-2. $$\frac{n - \frac{i(i+1)}{2}}{i + 1}$$ is an integer.
+1. $$t > \frac{i(i+1)}{2}$$
+2. $\frac{n - \frac{i(i+1)}{2}}{i + 1}$ is an integer.
 
 ## Sliding Window
 The code is essy to understand.
