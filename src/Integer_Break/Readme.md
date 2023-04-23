@@ -14,3 +14,6 @@ To find the derivative of both sides of the equation with respect to $x$, since 
 chain rule to obtain
 $$\frac{1}{y}\dot{y} = \frac{1-\ln(x)}{x^2}$$
 $$\dot{y} = \frac{1-\ln(x)}{x^2} \cdot x^{\frac{1}{x}}$$
+When $\ln(x) = 1$, i.e., $x = e$, a stationary point is obtained, which corresponds to the maximum value. As $e$ is not 
+an integer, the closest integers are 2 and 3. Setting $n = 6$, we find that $2^{\frac{6}{2}} < 3^{\frac{6}{3}}$, indicating 
+that the maximum value is achieved when $x = 3$.
