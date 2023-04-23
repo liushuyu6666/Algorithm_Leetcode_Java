@@ -20,5 +20,5 @@ that the maximum value is achieved when $x = 3$.
 
 We also need to consider the remainder:
 1. When the remainder is `0`, the maximum value is $3^{\frac{n}{3}}$
-2. When the remainder is `1`, the last `3` should be combined with the remainder `1` to become `4`, because $3 \prod 1 < 2 \prod 2$
+2. When the remainder is `1`, the last `3` should be combined with the remainder `1` to become `4`, because $3 \times 1 < 2 \prod 2$
 3. When the remainder is `2`, keep it.
