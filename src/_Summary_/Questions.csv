@@ -47,3 +47,4 @@ number,name,labels,prerequisites,benchmarks,worthyToTryAgain
 10062,Last_Remaining_Number_in_Circle,[31],[],[31],true
 239,Sliding_Window_Maximum,[32;33;30],[],[32;33;30],true
 54,Spiral_Matrix,[34],[],[34],true
+946,Validate_Stack_Sequences,[35],[],[35],true
