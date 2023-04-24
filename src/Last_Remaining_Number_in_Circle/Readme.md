@@ -24,4 +24,4 @@ The following image serves to illustrate the relationship between the survivor e
 Assuming that we utilize $x$ to represent the index of the survivor element in `level n-1`, we can derive the corresponding 
 index in `level` n as $(x + m) % n$. Therefore, we can express the relationship between the indices of the survivor element 
 in `level n` and `level n-1` mathematically as follows:
-$$f(n) = (f(n-1) + m) \mod{n}$$
+$$f(n) = (f(n-1) + m) \% {n}$$
