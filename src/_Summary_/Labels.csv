@@ -30,3 +30,5 @@ id,name
 29,"Greedy"
 30,"Sliding_Window"
 31,"Josephus_Problem"
+32,"Monotonic_Queue"
+33,"Deque"
