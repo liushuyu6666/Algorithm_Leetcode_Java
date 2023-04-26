@@ -3,7 +3,7 @@
 When using a dichotomous approach, determining the range for the next and final iteration can be challenging. However, 
 by bearing in mind the following criteria, we can make this process considerably more manageable.
 
-1. If we are using `midIndex = (leftIndex + rigthIndex) / 2`, 
+1. If we are using `midIndex = (leftIndex + rigthIndex) / 2`, both `leftIndex` and `rightIndex` are inclusive, 
    1. Remember that `midIndex >= leftIndex`.
    2. Remember that `midIndex < rightIndex`.
 So, we can use this code snippet:
