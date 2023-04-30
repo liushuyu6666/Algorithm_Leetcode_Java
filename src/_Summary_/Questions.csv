@@ -50,3 +50,4 @@ number,name,labels,prerequisites,benchmarks,worthyToTryAgain
 946,Validate_Stack_Sequences,[35],[],[35],true
 10051,Reverse_Pairs_in_an_Array,[19;36],[],[36],true
 10059,Maximum_Value_of_a_Queue,[32],[239],[32],true
+264,Ugly_Number_II,[1;23],[],[1;23],true
