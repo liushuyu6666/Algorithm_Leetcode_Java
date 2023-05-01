@@ -13,9 +13,9 @@ Introducing a second die with only one dot side yields the following possible va
 
 ![second_die_with_one_dot.png](second_die_with_one_dot.png)  
 
-Since the second die has only one dot, it can only contribute to the sum by adding 1. To calculate $f(s, 2)$ for each possible sum $s$, we can first determine $f(s-1, 1)$ by fixing the first die to have $s-1$ dots, and then add 1 with the second die to obtain the sum $s$. This process can be repeated for all possible values of $s$, resulting in the recurrence relation $f(s + 1, 2) = f(s, 1)$, where $1 \geq s \leq 6$.  
+Since the second die has only one dot, it can only contribute to the sum by adding 1. To calculate $f(s, 2)$ for each possible sum $s$, we can first determine $f(s-1, 1)$ by fixing the first die to have $s-1$ dots, and then add 1 with the second die to obtain the sum $s$. This process can be repeated for all possible values of $s$, resulting in the recurrence relation $f(s + 1, 2) = f(s, 1)$, where $1 \leq s \leq 6$.  
 
-By adding a two-dot side to the second die, we introduce a new way of obtaining each possible sum $s$.Specifically, to calculate $f(s, 2)$, we can fix the first die to have $s-2$ dots, and then add 2 with the second die. This leads to the recurrence relation $f(s+2, 2) = f(s, 1) + f(s+1, 1)$, where $1 \geq s \leq 6$.  
+By adding a two-dot side to the second die, we introduce a new way of obtaining each possible sum $s$.Specifically, to calculate $f(s, 2)$, we can fix the first die to have $s-2$ dots, and then add 2 with the second die. This leads to the recurrence relation $f(s+2, 2) = f(s, 1) + f(s+1, 1)$, where $1 \leq s \leq 6$.  
 
 ![second_die_with_two_dots.png](second_die_with_two_dots.png)  
 
