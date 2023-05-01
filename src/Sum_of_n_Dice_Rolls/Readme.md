@@ -1,6 +1,6 @@
 # Note of Sum of n Dice Rolls
 To solve this problem, it is necessary to determine the number of permutations for each possible sum beforehand.  
-We introduce two variables, $s$ and $n$, to represent the `sum` and `number of dice rolls`, respectively. Let $f(s,n)$ denote the number of permutations of each possible `sum` for $n$ dice rolls.
+We introduce two variables, $s$ and $n$, to represent the `sum` and `number of dice rolls`, respectively. Let $f(s,n)$ denote the number of permutations of each possible `sum` for $n$ dice rolls. Note that $n \leq s \leq 6n$.
 
 ## Dynamic Programming
 Starts from only one die. We have this image.  
@@ -31,4 +31,8 @@ To compute $f(s, 3)$, a similar sliding process is used, but this time the value
 
 ![three_dices.png](three_dices.png)  
 
-In the code, we implement the sliding process by using two integer arrays: `dp1` for $f(s, n-1)$ and `dp2` for $f(s, n)$. We slide the `dp1` along the `dp2` to obtain the updated values for `dp2`.
+In the code, we implement the sliding process by using two integer arrays: `dp1` for $f(s, n-1)$ and `dp2` for $f(s, n)$. We slide the `dp1` along the `dp2` to obtain the updated values for `dp2`.  
+In a nutshell, we get $f(s, n)$ from $f(s, 1)$.
+
+## dfs 
+Theoretically, the solution to this question can be obtained using the depth-first search algorithm, wherein the calculation is based on the function $f(s,n)$ derived from $f(s,n-1)$. However, it is important to note that the time complexity of this approach is $6^n$.
