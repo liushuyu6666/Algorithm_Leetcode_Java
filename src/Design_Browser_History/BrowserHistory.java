@@ -1,10 +1,12 @@
+package Design_Browser_History;
+
 import java.util.Stack;
 
-public class Design_Browser_History {
+public class BrowserHistory {
     private Stack<String> backward;
     private Stack<String> forward;
 
-    public Design_Browser_History(String homepage) {
+    public BrowserHistory(String homepage) {
         this.backward = new Stack<>();
         this.forward = new Stack<>();
 
