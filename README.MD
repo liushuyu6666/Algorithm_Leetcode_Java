@@ -28,3 +28,9 @@ Besides, for some specific questions, we have fantastic ways to solve them.
 ## Mobius Band
 Using Mobius Band to connect the end of the list to the start point. The question is here: [160. Intersection of Two Linked Lists
 ](src%2FIntersection_of_Two_Linked_Lists%2FReadme.md)
+
+# String or StringBuilder
+## Insert characters into String
+When inserting characters or a string into another string, the resulting length will be altered. Therefore, it is recommended to insert characters from the end of the string.
+
+Examples: [616. Add Bold Tag in String](src%2FAdd_Bold_Tag_in_String%2FReadme.md)
