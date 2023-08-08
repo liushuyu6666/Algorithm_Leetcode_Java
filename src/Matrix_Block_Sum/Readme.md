@@ -8,7 +8,6 @@ $$prefix(i, j) = \sum_{y=0}^{j} (\sum_{x=0}^{i} mat(x, y))$$
 Next, we define the answer matrix as `ans`. By utilizing the `prefix` matrix, we can obtain the `ans` matrix, as illustrated below, regardless of the boundary.
 
 ![get answer matrix from prefix matrix](prefix_sum.png)
-
 # Padding
 To optimize the `prefix` calculation, it is essential to consider the boundaries.
 
