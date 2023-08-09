@@ -41,10 +41,10 @@ $$c - \frac{a}{b} = c - \frac{b \cdot (c - 1)}{b} - \frac{a \mod b}{b} = 1 - \fr
 To compute the loss, we can apply this approach:
 $$loss = (T - (H + \frac{d}{S})) \cdot S = (T - \frac{H \cdot S + d}{S}) \cdot S = (1 - \frac{(H \cdot S + d) \mod S}{S}) \cdot S$$
 To operationalize this mathematical representation in code, the following transformation is needed:
-```java
-int loss = speed - (sum + dp[i - 1][j] + dist[i - 1]) % speed
-```
-Finally, we get
-```java
-dp[i][j] = dp[i - 1][j] + speed - (sum + dp[i - 1][j] + dist[i - 1]) % speed
-```
+    ```java
+        int loss = speed - (sum + dp[i - 1][j] + dist[i - 1]) % speed
+    ```
+    Finally, we get
+    ```java
+        dp[i][j] = dp[i - 1][j] + speed - (sum + dp[i - 1][j] + dist[i - 1]) % speed
+    ```
