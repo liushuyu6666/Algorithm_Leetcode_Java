@@ -35,7 +35,7 @@ $$loss = (T - (H + \frac{d}{S})) \cdot S$$
 To address this question, we introduce a straightforward equation: if we have
 $$\lceil(\frac{a}{b})\rceil = c$$
 the process to obtain $c - \frac{a}{b}$ is as follows: We manipulate the equation as
-$$\frac{a}{b} = \frac{b \cdot (c - 1)}{b} + \frac{a \&#37; b}{b}$$
+$$\frac{a}{b} = \frac{b \cdot (c - 1)}{b} + \frac{a \mod b}{b}$$
 Ultimately, we deduce that 
 $$c - \frac{a}{b} = c - \frac{b \cdot (c - 1)}{b} - \frac{a \% b}{b} = 1 - \frac{a \% b}{b}$$
 To compute the loss, we can apply this approach:
