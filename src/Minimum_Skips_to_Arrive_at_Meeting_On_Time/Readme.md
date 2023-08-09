@@ -37,9 +37,9 @@ $$\lceil(\frac{a}{b})\rceil = c$$
 the process to obtain $c - \frac{a}{b}$ is as follows: We manipulate the equation as
 $$\frac{a}{b} = \frac{b \cdot (c - 1)}{b} + \frac{a \mod b}{b}$$
 Ultimately, we deduce that 
-$$c - \frac{a}{b} = c - \frac{b \cdot (c - 1)}{b} - \frac{a \% b}{b} = 1 - \frac{a \% b}{b}$$
+$$c - \frac{a}{b} = c - \frac{b \cdot (c - 1)}{b} - \frac{a \mod b}{b} = 1 - \frac{a \mod b}{b}$$
 To compute the loss, we can apply this approach:
-$$loss = (T - (H + \frac{d}{S})) \cdot S = (T - \frac{H \cdot S + d}{S}) \cdot S = (1 - \frac{(H \cdot S + d) \% S}{S}) \cdot S$$
+$$loss = (T - (H + \frac{d}{S})) \cdot S = (T - \frac{H \cdot S + d}{S}) \cdot S = (1 - \frac{(H \cdot S + d) \mod S}{S}) \cdot S$$
 To operationalize this mathematical representation in code, the following transformation is needed:
 `int loss = speed - (sum + dp[i - 1][j] + dist[i - 1]) % speed`.
 Finally, we get `dp[i][j] = dp[i - 1][j] + speed - (sum + dp[i - 1][j] + dist[i - 1]) % speed`.
