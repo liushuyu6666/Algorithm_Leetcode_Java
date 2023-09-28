@@ -1,13 +1,14 @@
 # Algorithms or Skills
 ## Algorithms - Dynamic programming
-To address this problem, a dynamic programming (`dp`) matrix is employed, where `dp[i][j]` signifies the minimal total hours expended while traversing the `(i - 1)th` road and having already skipped `j` times rest.
+To address this problem, a dynamic programming (`dp`) matrix is employed, where `dp[i][j]` signifies the minimal total hours expended while traversing the `(i - 1)th` road and having already skipped `j` times rest. Note that since we don't need to rest after traveling the last road, we temporarily exclude it from consideration.
 
-![dp_matrix.png](dp_matrix.png)
+![dp matrix](dp_matrix.png)
 
 Upon traversing a given road (`dist[i]`), the number of times skipped could range from 0 to `i`. Thus, within the depicted matrix, `dp[i][j]` with `j > i` is infeasible, representing unreachable states. For instance, having crossed 7 roads, skipping 8 times is an impractical scenario.
 It is established by the problem's conditions that the final rest period is not permissible at the termination of the last road. Consequently, the `dp` matrix excludes coverage of the last road.
 
 **Initial State**: Initializing the `dp` matrix involves assigning huge values to the unreachable states and setting the first row to 0, symbolizing the hours required in the absence of any road crossings.
+
 **Transition Equation**: The transition equation is straightforward and is best comprehended through examination of the provided code.
 
 ## Skills - Floating-Point Numbers
@@ -35,7 +36,7 @@ $$loss = (T - (H + \frac{d}{S})) \cdot S$$
 To address this question, we introduce a straightforward equation: if we have
 $$\lceil(\frac{a}{b})\rceil = c$$
 the process to obtain $c - \frac{a}{b}$ is as follows: We manipulate the equation as
-$$\frac{a}{b} = \frac{b \cdot (c - 1)}{b} + \frac{a \mod b}{b}$$
+$$\frac{a}{b} = (c - 1) + \frac{a \mod b}{b} = \frac{b \cdot (c - 1)}{b} + \frac{a \mod b}{b}$$
 Ultimately, we deduce that 
 $$c - \frac{a}{b} = c - \frac{b \cdot (c - 1)}{b} - \frac{a \mod b}{b} = 1 - \frac{a \mod b}{b}$$
 To compute the loss, we can apply this approach:
