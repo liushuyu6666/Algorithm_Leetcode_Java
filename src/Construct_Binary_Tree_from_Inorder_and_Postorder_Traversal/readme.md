@@ -1,4 +1,4 @@
-# Note of Construct Binary Tree from Inorder and Postorder Traversal
-## dfs
+# algorithms
+## binary tree
 
 The same as `105 Construct Binary Tree from Inorder and Preorder Traversal`
