@@ -1,11 +1,11 @@
-# Note of Balanced Binary Tree
-## dfs
+# algorithms
+## recursion
 There are two solutions. 
 * `Solution 1` uses two functions: one to get the depth of the subtree and another one to judge if a certain node is a 
 balanced binary tree.
 * `Solution 2` uses only one function to judge if a certain node is a balanced binary tree.
 
-### Solution 1
+**Solution 1**
 This is the illustration of the `Solution1`  
 
 ![Solution1.png](Solution1.png)
@@ -47,7 +47,7 @@ is visited.
 
 ![pruning_solution1.png](pruning_solution1.png)
 
-### Solution 2
+**Solution 2**
 
 This is the illustration of the `Solution2`  
 
