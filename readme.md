@@ -1,3 +1,11 @@
+- [Overview](#overview)
+- [Summary](#summary)
+- [Dynamic Programming](#dynamic-programming)
+- [Linked List](#linked-list)
+  - [Mobius Band](#mobius-band)
+- [String or StringBuilder](#string-or-stringbuilder)
+  - [Insert characters into String](#insert-characters-into-string)
+
 # Overview
 This project aims to offer comprehensive Java solutions for all Leetcode questions, with carefully selected benchmark 
 questions serving as exemplars for one or multiple labels, highlighting effective problem-solving approaches. While some 
@@ -34,3 +42,18 @@ Using Mobius Band to connect the end of the list to the start point. The questio
 When inserting characters or a string into another string, the resulting length will be altered. Therefore, it is recommended to insert characters from the end of the string.
 
 Examples: [616. Add Bold Tag in String](src%2FAdd_Bold_Tag_in_String%2FReadme.md)
+
+
+# Data Structure
+## Array
+### Fill in Initial Values
+```java
+public class HowToUseArray { 
+    public void fill() {
+        int[] x = new int[80];
+        Arrays.fill(x, 0);
+    }
+}
+```
+
+## String Builder

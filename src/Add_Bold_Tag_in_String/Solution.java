@@ -5,85 +5,51 @@ import java.util.HashSet;
 
 class Solution {
     public String addBoldTag(String s, String[] words) {
-        boolean[] indicators = new boolean[s.length()];
-        Arrays.fill(indicators, false);
-        HashSet<String> wordsSet = new HashSet<>(Arrays.asList(words));
-
-        for(int i = 0; i < s.length(); i++) {
-            putTrue(indicators, s, wordsSet, i);
+        boolean[] overlap = new boolean[s.length()];
+        for (int i = 0; i < s.length(); i++) {
+            overlap[i] = false;
         }
 
-        return addTag(indicators, s);
-    }
-
-    // use s.indexOf to optimize it.
-    public String advancedAddBoldTag(String s, String[] words) {
-        boolean[] indicators = new boolean[s.length()];
-        Arrays.fill(indicators, false);
-        HashSet<String> wordsSet = new HashSet<>(Arrays.asList(words));
-
-        for(String word : words) {
-            advancedPutTrue(indicators, s, word);
+        for (String word : words) {
+            findWordInString(s, word, overlap);
         }
 
-        String result = addTag(indicators, s);
-
-        return result;
+        return addBoldTags(s, overlap);
     }
 
-    public void putTrue(boolean[] indicators, String s, HashSet<String> words, int startIdx) {
-        for (String w : words) {
-            int len = w.length();
-            int endIdx = len + startIdx;
-            if (endIdx <= s.length()) {
-                String sub = s.substring(startIdx, endIdx);
-                if (words.contains(sub)) {
-                    fillTrue(indicators, startIdx, endIdx);
-                }
+    public String addBoldTags(String s, boolean[] overlap) {
+        boolean prev = false;
+        for(int i = overlap.length - 1; i >= 0; i--) {
+            if(overlap[i] && !prev) { // curr is true but prev is false
+                s = s.substring(0, i + 1) + "</b>" + s.substring(i + 1);
+            } else if(!overlap[i] && prev) {
+                s = s.substring(0, i + 1) + "<b>" + s.substring(i + 1);
             }
+            prev = overlap[i];
         }
+        if (overlap[0]) {
+            s = "<b>" + s;
+        }
+
+        return s;
     }
 
-    public void advancedPutTrue(boolean[] indicators, String s, String word) {
-        int find = s.indexOf(word, 0);
-        while(find != -1) {
-            fillTrue(indicators, find, find + word.length());
-            find = s.indexOf(word, find + 1);
+
+
+    public void findWordInString(String s, String word, boolean[] overlap) {
+        int length = word.length();
+        int findIndex = s.indexOf(word, 0);
+
+        while(findIndex != -1) {
+            updateListSlice(overlap, findIndex, findIndex + length, true);
+            findIndex = s.indexOf(word, findIndex + 1);
         }
+
     }
 
-    public void fillTrue(boolean[] indicators, int startIdx, int endIdx) {
+    public void updateListSlice(boolean[] overlap, int startIdx, int endIdx, boolean newValue) {
         for(int i = startIdx; i < endIdx; i++) {
-            indicators[i] = true;
+            overlap[i] = newValue;
         }
-    }
-
-    public String addTag(boolean[] indicators, String s) {
-        boolean latterIndicator = false;
-        String newString = s;
-        for (int i = indicators.length - 1; i >= 0 ; i--) {
-            if (latterIndicator != indicators[i]) {
-                if (latterIndicator) {
-                    // curr    latter
-                    // False   True
-                    newString = insertTag(newString, i + 1, "<b>");
-                } else {
-                    // curr   latter
-                    // True   False
-                    newString = insertTag(newString, i + 1, "</b>");
-                }
-            }
-            latterIndicator = indicators[i];
-        }
-        if (latterIndicator) {
-            newString = insertTag(newString, 0, "<b>");
-        }
-        return newString;
-    }
-
-    public String insertTag(String s, int pos, String tag) {
-        if (pos == s.length()) return s + tag;
-        if (pos > s.length()) return s;
-        return s.substring(0, pos) + tag + s.substring(pos);
     }
 }
