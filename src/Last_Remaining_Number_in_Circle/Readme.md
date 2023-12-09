@@ -19,4 +19,4 @@ $$f(n) = (f(n-1) + m) \mod{n}$$
 
 One key observation is that for any positive integer $n$ and integer $t$ where $t \lt n$:
 
-$$n + t \mod{n} = t$$
+$$(n + t) \mod{n} = t$$
