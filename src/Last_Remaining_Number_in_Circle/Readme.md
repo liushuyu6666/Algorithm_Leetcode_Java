@@ -16,3 +16,7 @@ Let's illustrate this with an image:
 Assuming that we utilize $x$ to represent the index of the survivor element in `step n-1`, we can derive the corresponding index in `step n` as $(x + m) \mod{n}$. Therefore, we can express the relationship between the indices of the survivor element in `step n` and `step n-1` mathematically as follows:
 
 $$f(n) = (f(n-1) + m) \mod{n}$$
+
+One key observation is that for any positive integer $n$ and integer $t$ where $t \lt n$:
+
+$$n + t \mod{n} = t$$
