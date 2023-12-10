@@ -19,11 +19,11 @@ $$f(x, s - 1) = (x + m) \mod{s}$$
 
 For a more general form, we have
 
-$$f(x, s) = (x + m) \mod{s + 1}$$
+$$f(x, s) = (x + m) \mod{(s + 1)}$$
 
-Let's reiterate the significance of this equation: for an element indexed as $x$ (0-indexed array) in `step s`, the index of its corresponding element in `step s + 1` is give by $(x + m) \mod{s + 1}$.
+Let's reiterate the significance of this equation: for an element indexed as $x$ (0-indexed array) in `step s`, the index of its corresponding element in `step s + 1` is give by $(x + m) \mod{(s + 1)}$.
 
-Starting from $f(0, 1)$, representing the survivor element in `step 1`, we obtain $m \mod{s + 1}$, signifying the index of the survivor element in `step 2`. We then substitute $m \mod{s + 1}$ into the function to derive $f(m \mod{s + 1}, 2)$, which denotes the index of the survivor element in `step 3`. This process continues until we reach `step n`.
+Starting from $f(0, 1)$, representing the survivor element in `step 1`, we obtain $m \mod{(s + 1)}$, signifying the index of the survivor element in `step 2`. We then substitute $m \mod{(s + 1)}$ into the function to derive $f(m \mod{(s + 1)}, 2)$, which denotes the index of the survivor element in `step 3`. This process continues until we reach `step n`.
 
 One key observation is that for any positive integer $n$ and integer $t$ where $t \lt n$:
 
