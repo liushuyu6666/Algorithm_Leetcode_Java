@@ -25,6 +25,22 @@ Let's reiterate the significance of this equation: for an element indexed as $x$
 
 Starting from $f(0, 1)$, representing the survivor element in `step 1`, we obtain $m \mod{(s + 1)}$, signifying the index of the survivor element in `step 2`. We then substitute $m \mod{(s + 1)}$ into the function to derive $f(m \mod{(s + 1)}, 2)$, which denotes the index of the survivor element in `step 3`. This process continues until we reach `step n`.
 
-One key observation is that for any positive integer $n$ and integer $t$ where $t \lt n$:
+# skills
+## mod
+## mod in 1-indexed array
+We cannot use $(x + m) \mod{s}$ here become when $(x + m) = s$ the index will be 0. So, it can be converted to
+
+$$f(x, s - 1) = (((x + m) - 1) &#37 s) + 1$$
+
+For a more general form, we have
+
+$$f(x, s) = (((x + m) - 1) &#37 (s + 1)) + 1$$
+
+
+## mod
+### mod to plus or deduction
+One key observation is that for any integer $n$ and integer $t$ where $t \lt |n|$:
 
 $$(n + t) \mod{n} = t$$
+
+
